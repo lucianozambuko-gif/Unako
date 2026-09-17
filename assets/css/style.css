@@ -570,13 +570,62 @@ h2.section-title {
 footer.site {
   background: var(--band-bg);
   color: var(--band-ink-faint);
-  font-size: 12px;
-  padding: 14px 0;
+  font-size: 14.5px;
+  padding: 0;
 }
-footer.site .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-footer.site a { text-decoration: underline; text-decoration-color: rgba(241,233,220,0.3); }
-footer.site nav.foot-links { display: flex; gap: 12px; flex-wrap: wrap; }
-footer.site img { width: 18px; height: 18px; }
+footer.site a { color: inherit; text-decoration: none; }
+footer.site a:hover { text-decoration: underline; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: clamp(28px, 5vw, 60px);
+  padding: clamp(40px, 7vw, 64px) 0 clamp(28px, 5vw, 40px);
+}
+@media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+
+.footer-brand .brand { color: var(--band-ink); }
+.footer-brand img.brand-mark { border-color: var(--band-rule); }
+.footer-brand p { margin: 14px 0 0; max-width: 40ch; font-size: 14px; opacity: 0.75; }
+
+.footer-col h3 {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--band-ink);
+  opacity: 0.55;
+  margin: 0 0 16px;
+}
+.footer-col { display: flex; flex-direction: column; gap: 11px; }
+
+.footer-bottom {
+  border-top: 1px solid var(--band-rule);
+  padding: 22px 0 clamp(28px, 5vw, 40px);
+}
+.footer-disclaimer { font-size: 12.5px; opacity: 0.6; max-width: 78ch; margin: 0 0 14px; }
+.footer-disclaimer strong { color: var(--band-ink); opacity: 0.9; }
+.footer-copy { font-size: 12.5px; opacity: 0.55; margin: 0; }
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--band-accent);
+  color: #241521;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  z-index: 300;
+}
+.back-to-top:hover { background: var(--ochre); }
 
 /* ---------- Simple content pages (404 etc) ---------- */
 .simple-page { padding: clamp(64px, 10vw, 110px) 0; text-align: center; }

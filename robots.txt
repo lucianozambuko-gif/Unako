@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucianozambuko-gif.github.io/Unako/sitemap.xml

@@ -587,12 +587,13 @@ h2.section-title {
 footer.site {
   background: var(--plum-deep);
   color: rgba(241,233,220,0.65);
-  font-size: 13px;
-  padding: 22px 0 34px;
+  font-size: 12px;
+  padding: 14px 0;
 }
-footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer.site .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 footer.site a { text-decoration: underline; text-decoration-color: rgba(241,233,220,0.3); }
-footer.site nav.foot-links { display: flex; gap: 16px; flex-wrap: wrap; }
+footer.site nav.foot-links { display: flex; gap: 12px; flex-wrap: wrap; }
+footer.site img { width: 18px; height: 18px; }
 
 /* ---------- Simple content pages (404 etc) ---------- */
 .simple-page { padding: clamp(64px, 10vw, 110px) 0; text-align: center; }

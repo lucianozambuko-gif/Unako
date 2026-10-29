@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 
@@ -64,39 +64,97 @@
     </div>
   </section>
 
-  <section id="support" style="border-bottom:none;">
+  <section id="finder" class="finder-section" style="padding-bottom: 0; border-bottom: none;">
+    <div class="wrap">
+      <div class="finder" aria-live="polite">
+        <div class="finder-top">
+          <span class="section-num">Where do I start?</span>
+          <p class="finder-privacy">Nothing you choose here is saved or sent anywhere.</p>
+        </div>
+        <div class="finder-body"></div>
+        <button class="finder-restart" type="button" hidden>← Start again</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
     <div class="wrap">
       <div class="support-list">
-        <div class="support-item">
+        <div class="support-item" id="svc-gbv">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 27s-11-6.8-11-15A6.5 6.5 0 0116 8a6.5 6.5 0 0111 4c0 8.2-11 15-11 15z" stroke="var(--wine)" stroke-width="2"/></svg>
           <div><h3>GBV response and counselling</h3><p>A confidential first point of contact for anyone experiencing or leaving an abusive relationship, with guidance on reporting and next steps.</p></div>
         </div>
-        <div class="support-item">
+        <div class="support-item" id="svc-family">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 26V14a8 8 0 0116 0v12" stroke="var(--ochre)" stroke-width="2"/><path d="M8 22h16" stroke="var(--ochre)" stroke-width="2"/></svg>
           <div><h3>Family and shelter support</h3><p>Working with local government toward emergency shelter for those who need to get away from an abuser, plus support for the family left navigating the fallout.</p></div>
         </div>
-        <div class="support-item">
+        <div class="support-item" id="svc-mind">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="10" stroke="var(--clay)" stroke-width="2"/><path d="M16 10v6l4 4" stroke="var(--clay)" stroke-width="2" stroke-linecap="round"/></svg>
           <div><h3>Mental health support</h3><p>Space to talk through trauma, anxiety and the everyday weight of rural life, with mentors and, over time, professional counsellors.</p></div>
         </div>
-        <div class="support-item">
+        <div class="support-item" id="svc-drugs">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 24l6-6 5 4 9-11" stroke="var(--sage)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <div><h3>Drug and alcohol support</h3><p>Honest, non-judgemental support for young people and adults dealing with addiction, and the family members affected by it.</p></div>
         </div>
-        <div class="support-item">
+        <div class="support-item" id="svc-work">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="7" y="9" width="18" height="14" rx="1" stroke="var(--wine)" stroke-width="2"/><path d="M7 12h18M12 18h8" stroke="var(--wine)" stroke-width="2"/></svg>
           <div><h3>Employment workshops</h3><p>CV writing, interview practice and links to local opportunities, so a fresh start isn't blocked by not knowing where to begin.</p></div>
         </div>
-        <div class="support-item">
+        <div class="support-item" id="svc-health">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 6c-6 4-10 4-10 4v9c0 6 4.5 9.5 10 11.5C21.5 28.5 26 25 26 19v-9s-4 0-10-4z" stroke="var(--ochre)" stroke-width="2"/></svg>
           <div><h3>Sexual and reproductive health</h3><p>Clear, stigma-free information and referrals on sexual health, delivered by people trained to talk to young people honestly.</p></div>
         </div>
-        <div class="support-item">
+        <div class="support-item" id="svc-relationships">
           <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 22c-6-3.5-11-7.6-11-12.4C5 6.4 7.6 4 10.8 4c2 0 3.9 1 5.2 2.7A6.6 6.6 0 0121.2 4C24.4 4 27 6.4 27 9.6 27 14.4 22 18.5 16 22z" stroke="var(--clay)" stroke-width="2"/></svg>
           <div><h3>Healthy relationships</h3><p>Workshops on what a respectful, safe partnership looks like — aimed at catching the warning signs long before they escalate.</p></div>
         </div>
       </div>
-      <p style="margin-top:32px; text-align:center;"><a class="btn btn-primary" href="centre.html">See what the centre will look like →</a></p>
+    </div>
+  </section>
+
+  <section id="difference" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-num">Know the difference</span>
+          <h2 class="section-title">Love shouldn't hurt.</h2>
+        </div>
+        <p class="section-kicker">A healthy relationship makes you feel safe, respected and free to be yourself. Switch between the two to compare.</p>
+      </div>
+      <div class="diff-wrap" data-mode="healthy">
+        <div class="diff-tabs" role="tablist" aria-label="Healthy relationship or warning signs">
+          <button class="diff-tab" type="button" role="tab" id="tab-healthy" aria-selected="true" aria-controls="diff-healthy" data-mode="healthy">Healthy looks like</button>
+          <button class="diff-tab" type="button" role="tab" id="tab-warning" aria-selected="false" aria-controls="diff-warning" data-mode="warning" tabindex="-1">Warning signs</button>
+        </div>
+        <div class="diff-panel" id="diff-healthy" role="tabpanel" aria-labelledby="tab-healthy">
+          <ul>
+            <li style="--n:0">Respects your “no”</li>
+            <li style="--n:1">Trusts you and gives you space</li>
+            <li style="--n:2">Supports your schoolwork and dreams</li>
+            <li style="--n:3">Talks problems through calmly</li>
+            <li style="--n:4">Celebrates you being yourself</li>
+            <li style="--n:5">Never pressures you</li>
+          </ul>
+        </div>
+        <div class="diff-panel" id="diff-warning" role="tabpanel" aria-labelledby="tab-warning" hidden>
+          <ul>
+            <li style="--n:0">Checks your phone or controls who you see</li>
+            <li style="--n:1">Gets jealous or angry easily</li>
+            <li style="--n:2">Puts you down or embarrasses you</li>
+            <li style="--n:3">Pressures you for sex or photos</li>
+            <li style="--n:4">Gives gifts or money, then expects something back</li>
+            <li style="--n:5">Threatens, hits or hurts you</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="section-num" style="display:block; margin: 44px 0 0;">Consent is…</h3>
+      <div class="consent-grid">
+        <div class="consent-card"><h4>Freely given</h4><p>No pressure, guilt or threats.</p></div>
+        <div class="consent-card"><h4>Can be taken back</h4><p>You can change your mind at any time.</p></div>
+        <div class="consent-card"><h4>Never assumed</h4><p>Silence or a past “yes” is not consent.</p></div>
+      </div>
+      <p style="margin-top:40px; text-align:center;"><a class="btn btn-primary" href="centre.html">See what the centre will look like →</a></p>
     </div>
   </section>
 
@@ -135,6 +193,6 @@
 
 <button class="back-to-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 
-<script src="assets/js/main.js?v=2"></script>
+<script src="assets/js/main.js?v=3"></script>
 </body>
 </html>

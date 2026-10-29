@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 
@@ -169,31 +169,119 @@
           <span class="section-num">Early cost estimates</span>
           <h2 class="section-title" style="font-size: clamp(1.5rem, 2.6vw, 2rem);">A first look at what equipment costs.</h2>
         </div>
-        <p class="section-kicker">Rough estimates gathered while planning the build. Actual costs will be confirmed as quotes come in and land is secured.</p>
+        <p class="section-kicker">Rough estimates gathered while planning the build. Tick what you'd like to help with and watch the centre come together — then send it to us as a pledge.</p>
       </div>
-      <div class="table-scroll">
-        <table class="budget-table">
-          <thead>
-            <tr><th>Item</th><th style="text-align:right">Estimated cost (ZAR)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Computers</td><td class="amount">R 100,000</td></tr>
-            <tr><td>Kitchen appliances</td><td class="amount">R 200,000</td></tr>
-            <tr><td>Painting</td><td class="amount">R 80,000</td></tr>
-            <tr><td>Basketball / netball court</td><td class="amount">R 20,000</td></tr>
-            <tr><td>Big screen</td><td class="amount">R 10,000</td></tr>
-            <tr><td>Tables and chairs</td><td class="amount">R 10,000</td></tr>
-            <tr><td>Wi-Fi setup</td><td class="amount">R 5,000</td></tr>
-            <tr><td>Cameras</td><td class="amount">R 5,000</td></tr>
-            <tr><td>Cellphones</td><td class="amount">R 2,000</td></tr>
-            <tr><td>Pool table</td><td class="amount">To be quoted</td></tr>
-          </tbody>
-          <tfoot>
-            <tr><td>Estimated equipment subtotal</td><td class="amount">R 432,000+</td></tr>
-          </tfoot>
-        </table>
+
+      <div class="builder">
+        <div class="builder-visual" aria-hidden="true">
+          <svg class="scene" viewBox="0 0 480 300">
+            <text class="complete-banner fill-wine" x="14" y="28" style="font-family: var(--font-display); font-style: italic; font-size: 15px;">Ready for opening day ✦</text>
+            <!-- painting: walls, roof and door colour (drawn first so other pieces sit on top) -->
+            <g class="piece" data-piece="painting">
+              <rect class="fill-soft" x="130" y="130" width="220" height="120"/>
+              <polygon class="fill-plum" points="118,132 240,68 362,132"/>
+              <rect class="fill-wine" x="222" y="195" width="36" height="55"/>
+            </g>
+            <!-- blueprint outline, always visible -->
+            <line class="ground" x1="0" y1="250" x2="480" y2="250"/>
+            <rect class="blueprint" x="130" y="130" width="220" height="120"/>
+            <polyline class="blueprint" points="118,132 240,68 362,132"/>
+            <rect class="blueprint" x="222" y="195" width="36" height="55"/>
+            <text class="label" x="240" y="122" text-anchor="middle">Unako Centre</text>
+            <g class="piece" data-piece="wifi">
+              <g class="wifi">
+                <path class="stroke-ochre" d="M231 52 a13 13 0 0 1 18 0"/>
+                <path class="stroke-ochre" d="M224 44 a23 23 0 0 1 32 0"/>
+                <path class="stroke-ochre" d="M217 36 a33 33 0 0 1 46 0"/>
+              </g>
+              <circle class="fill-ochre" cx="240" cy="59" r="3.5"/>
+            </g>
+            <g class="piece" data-piece="computers">
+              <rect class="fill-plum" x="146" y="150" width="60" height="38"/>
+              <rect class="fill-soft screen-glow" x="152" y="157" width="22" height="15"/>
+              <rect class="fill-soft screen-glow" x="178" y="157" width="22" height="15"/>
+              <rect class="fill-paper" x="160" y="174" width="6" height="6"/>
+              <rect class="fill-paper" x="186" y="174" width="6" height="6"/>
+            </g>
+            <g class="piece" data-piece="kitchen">
+              <rect class="fill-clay" x="296" y="82" width="16" height="28"/>
+              <g class="smoke"><circle cx="304" cy="74" r="6"/><circle cx="304" cy="74" r="6"/><circle cx="304" cy="74" r="6"/></g>
+              <rect class="fill-plum" x="274" y="150" width="60" height="38"/>
+              <path class="fill-ochre" d="M290 176 h28 v-6 a14 9 0 0 0 -28 0z"/>
+              <rect class="fill-ochre" x="302" y="161" width="4" height="4"/>
+            </g>
+            <g class="piece" data-piece="cameras">
+              <rect class="fill-ink" x="334" y="136" width="14" height="8" rx="1"/>
+              <circle class="fill-wine" cx="333" cy="140" r="3"/>
+              <line class="ink" x1="348" y1="140" x2="352" y2="140"/>
+            </g>
+            <g class="piece" data-piece="phones">
+              <rect class="fill-ink" x="266" y="214" width="11" height="19" rx="2"/>
+              <rect class="fill-soft" x="268" y="217" width="7" height="12"/>
+              <rect class="fill-ink" x="281" y="218" width="11" height="19" rx="2"/>
+              <rect class="fill-soft" x="283" y="221" width="7" height="12"/>
+            </g>
+            <g class="piece" data-piece="screen">
+              <rect class="fill-ink" x="24" y="150" width="86" height="54" rx="2"/>
+              <rect class="fill-wine screen-glow" x="29" y="155" width="76" height="44"/>
+              <path class="stroke-paper" d="M58 168 l14 9 -14 9z" style="fill: var(--paper)"/>
+              <line class="ink" x1="40" y1="204" x2="40" y2="250"/>
+              <line class="ink" x1="94" y1="204" x2="94" y2="250"/>
+            </g>
+            <g class="piece" data-piece="court">
+              <rect class="fill-sage" x="368" y="236" width="106" height="14"/>
+              <line class="stroke-paper" x1="421" y1="236" x2="421" y2="250"/>
+              <line class="ink" x1="462" y1="150" x2="462" y2="250"/>
+              <rect class="fill-paper" x="444" y="150" width="20" height="15" style="stroke: var(--ink); stroke-width: 2"/>
+              <ellipse cx="447" cy="170" rx="8" ry="2.5" style="fill:none; stroke: var(--ochre); stroke-width: 2.5"/>
+              <circle class="fill-clay" cx="400" cy="226" r="7"/>
+            </g>
+            <g class="piece" data-piece="tables">
+              <rect class="fill-ochre" x="52" y="266" width="52" height="6"/>
+              <line class="ink" x1="58" y1="272" x2="58" y2="288"/>
+              <line class="ink" x1="98" y1="272" x2="98" y2="288"/>
+              <path class="ink" d="M36 288 v-18 M36 278 h12 v10"/>
+              <path class="ink" d="M120 288 v-18 M120 278 h-12 v10"/>
+            </g>
+            <g class="piece" data-piece="pool">
+              <rect class="fill-wine" x="284" y="262" width="76" height="22" rx="3"/>
+              <rect class="fill-sage" x="289" y="266" width="66" height="14"/>
+              <circle class="fill-ink" cx="290" cy="267" r="2.2"/><circle class="fill-ink" cx="354" cy="267" r="2.2"/>
+              <circle class="fill-ink" cx="290" cy="279" r="2.2"/><circle class="fill-ink" cx="354" cy="279" r="2.2"/>
+              <circle class="fill-paper" cx="312" cy="273" r="2.5"/><circle class="fill-clay" cx="330" cy="271" r="2.5"/><circle class="fill-ochre" cx="335" cy="276" r="2.5"/>
+              <line class="ink" x1="292" y1="284" x2="292" y2="294"/>
+              <line class="ink" x1="352" y1="284" x2="352" y2="294"/>
+            </g>
+          </svg>
+          <div class="builder-readout">
+            <span class="builder-total" aria-live="polite">R 0</span>
+            <span class="builder-count">Nothing chosen yet</span>
+          </div>
+          <div class="builder-meter"><span></span></div>
+          <p class="builder-goal">of R 432,000+ in estimated equipment</p>
+        </div>
+
+        <div>
+          <ul class="build-list">
+            <li class="build-item"><label><input type="checkbox" value="computers" data-cost="100000" data-label="Computers"><span class="bi-name">Computers<small>Media suite and IT skills</small></span><span class="amount">R 100,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="kitchen" data-cost="200000" data-label="Kitchen appliances"><span class="bi-name">Kitchen appliances<small>Feeding visitors and events</small></span><span class="amount">R 200,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="painting" data-cost="80000" data-label="Painting"><span class="bi-name">Painting<small>Inside and out</small></span><span class="amount">R 80,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="court" data-cost="20000" data-label="Basketball / netball court"><span class="bi-name">Basketball / netball court<small>Outdoor sport</small></span><span class="amount">R 20,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="screen" data-cost="10000" data-label="Big screen"><span class="bi-name">Big screen<small>Talks, films and workshops</small></span><span class="amount">R 10,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="tables" data-cost="10000" data-label="Tables and chairs"><span class="bi-name">Tables and chairs</span><span class="amount">R 10,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="wifi" data-cost="5000" data-label="Wi-Fi setup"><span class="bi-name">Wi-Fi setup</span><span class="amount">R 5,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="cameras" data-cost="5000" data-label="Cameras"><span class="bi-name">Cameras<small>Security and recording</small></span><span class="amount">R 5,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="phones" data-cost="2000" data-label="Cellphones"><span class="bi-name">Cellphones<small>Staff contact lines</small></span><span class="amount">R 2,000</span></label></li>
+            <li class="build-item"><label><input type="checkbox" value="pool" data-cost="0" data-label="Pool table"><span class="bi-name">Pool table</span><span class="amount">To be quoted</span></label></li>
+          </ul>
+          <div class="build-foot"><span>Estimated equipment subtotal</span><span>R 432,000+</span></div>
+          <div class="builder-actions">
+            <a class="btn btn-primary builder-pledge disabled" href="get-involved.html" aria-disabled="true">Pledge these items</a>
+            <button class="btn btn-ghost builder-all" type="button">Build it all</button>
+          </div>
+          <p class="builder-note">Your pledge opens an email to the founder with your chosen items — nothing is sent until you press send. Or <a href="get-involved.html">see other ways to help →</a></p>
+        </div>
       </div>
-      <p style="margin-top:28px; text-align:center;"><a class="btn btn-primary" href="get-involved.html">Help fund the build →</a></p>
     </div>
   </section>
 
@@ -232,6 +320,6 @@
 
 <button class="back-to-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 
-<script src="assets/js/main.js?v=2"></script>
+<script src="assets/js/main.js?v=3"></script>
 </body>
 </html>

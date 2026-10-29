@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 
@@ -68,8 +68,16 @@
         <p class="hero-note">Unako is a registered non-profit in its founding stage, raising land, funds and volunteers to open its doors. If you are in immediate danger, see the helplines on our <a href="contact.html">Contact page</a>.</p>
       </div>
       <div class="hero-art">
-        <div class="hero-seal">
-          <img src="assets/images/logo.jpg" alt="Unako GBV Foundation emblem">
+        <div class="hero-stage">
+          <canvas aria-hidden="true"></canvas>
+          <svg class="hero-ring" viewBox="0 0 300 300" aria-hidden="true">
+            <defs><path id="ring-path" d="M150,150 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0"/></defs>
+            <circle cx="150" cy="150" r="142"/>
+            <text><textPath href="#ring-path">we rise by lifting others · empower · educate · engage ·</textPath></text>
+          </svg>
+          <div class="hero-seal">
+            <img src="assets/images/logo.jpg" alt="Unako GBV Foundation emblem">
+          </div>
         </div>
       </div>
     </div>
@@ -104,11 +112,70 @@
     </div>
   </section>
 
+  <section id="watch">
+    <div class="wrap reel-grid">
+      <div class="reel">
+        <video preload="none" playsinline poster="assets/media/unako-reel-poster.jpg" aria-label="Unako GBV Foundation introduction reel, 36 seconds, no sound">
+          <source src="assets/media/unako-reel.mp4" type="video/mp4">
+        </video>
+        <button class="reel-play" type="button" aria-label="Play the 36-second Unako reel">
+          <span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="#2E0F2A"/></svg></span>
+          <span class="reel-len">0:36 · no sound needed</span>
+        </button>
+      </div>
+      <div class="reel-copy">
+        <span class="section-num">02 — Unako in 36 seconds</span>
+        <h2 class="section-title">The whole idea, in one short reel.</h2>
+        <p>Why Unako exists, what the centre will offer, where we are today and how to help — in one short reel you can share on WhatsApp or show at a meeting.</p>
+        <p><a class="btn btn-ghost" href="assets/media/unako-reel.mp4" download>Download the reel</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="signs">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-num">03 — Know the signs</span>
+          <h2 class="section-title">It rarely starts with a bruise.</h2>
+        </div>
+        <p class="section-kicker">Abuse takes many forms. Tap a card to see what each one can look like — at home, at school, online or in a relationship.</p>
+      </div>
+      <div class="signs-grid">
+        <button class="sign-card" type="button" aria-pressed="false">
+          <span class="sign-inner">
+            <span class="sign-face sign-front"><span class="sign-n">i.</span><span class="sign-title">Physical</span><span class="sign-tap">Tap to see the signs ↻</span></span>
+            <span class="sign-face sign-back"><span class="sign-text">Hitting, pushing, slapping or hurting you in any way.</span><small>It is never your fault.</small></span>
+          </span>
+        </button>
+        <button class="sign-card" type="button" aria-pressed="false">
+          <span class="sign-inner">
+            <span class="sign-face sign-front"><span class="sign-n">ii.</span><span class="sign-title">Emotional</span><span class="sign-tap">Tap to see the signs ↻</span></span>
+            <span class="sign-face sign-back"><span class="sign-text">Threats, insults, or controlling who you see and talk to.</span><small>Control is a warning sign.</small></span>
+          </span>
+        </button>
+        <button class="sign-card" type="button" aria-pressed="false">
+          <span class="sign-inner">
+            <span class="sign-face sign-front"><span class="sign-n">iii.</span><span class="sign-title">Sexual</span><span class="sign-tap">Tap to see the signs ↻</span></span>
+            <span class="sign-face sign-back"><span class="sign-text">Any touching or sex without your full, free consent.</span><small>Consent can be taken back.</small></span>
+          </span>
+        </button>
+        <button class="sign-card" type="button" aria-pressed="false">
+          <span class="sign-inner">
+            <span class="sign-face sign-front"><span class="sign-n">iv.</span><span class="sign-title">Online</span><span class="sign-tap">Tap to see the signs ↻</span></span>
+            <span class="sign-face sign-back"><span class="sign-text">Sharing, or threatening to share, your photos or messages.</span><small>You deserve to be safe online too.</small></span>
+          </span>
+        </button>
+      </div>
+      <p class="signs-note"><em>Awungedwa</em> — you are not alone. <a href="support.html#finder">Find the right support →</a></p>
+    </div>
+  </section>
+
   <section id="support-preview">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <span class="section-num">02 — What we offer</span>
+          <span class="section-num">04 — What we offer</span>
           <h2 class="section-title">Support that meets people where they are.</h2>
         </div>
         <p class="section-kicker">Every service is designed to be walked into without shame — whether the visit is about a relationship, a habit, or a job application.</p>
@@ -131,11 +198,38 @@
     </div>
   </section>
 
+  <section id="youth">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-num">05 — Youth &amp; sport</span>
+          <h2 class="section-title">Discipline builds champions.</h2>
+        </div>
+        <p class="section-kicker">Sport is one of the ways Unako reaches young people — building confidence, discipline and a place to belong. Here's the youth sport community we stand alongside in the Eastern Cape.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count-to="7">7</b><span>gold medals</span></div>
+        <div class="stat"><b data-count-to="8">8</b><span>silver medals</span></div>
+        <div class="stat"><b><span data-count-to="3">3</span>rd</b><span>place overall</span></div>
+      </div>
+      <div class="gallery">
+        <button class="gallery-item" type="button" data-caption="Ace Mates Academy of Sports at the 2026 Best of the Best tournament: 7 gold, 8 silver and 3rd place overall.">
+          <span class="gi-img"><img src="assets/images/community/ace-mates-best-of-the-best-2026.jpg" alt="Young boxers from Ace Mates Academy of Sports celebrating with medals and trophies at the 2026 Best of the Best tournament" loading="lazy" width="720" height="1093"></span>
+          <span class="gi-cap"><strong>Best of the Best 2026</strong>Ace Mates Academy of Sports — 7 gold, 8 silver, 3rd overall.</span>
+        </button>
+        <button class="gallery-item" type="button" data-caption="ECABO Level 2 Coaches Course, 16–18 October 2026, Buffalo City Metro (KuGompo). Better coaches build stronger boxers.">
+          <span class="gi-img"><img src="assets/images/community/ecabo-level-2-coaches-course-2026.jpg" alt="Poster for the ECABO Level 2 Coaches Course, 16 to 18 October 2026, Buffalo City Metro, KuGompo" loading="lazy" width="896" height="1200"></span>
+          <span class="gi-cap"><strong>Better coaches, stronger boxers</strong>ECABO Level 2 Coaches Course · 16–18 Oct 2026, Buffalo City.</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section id="involve-preview">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <span class="section-num">03 — Get involved</span>
+          <span class="section-num">06 — Get involved</span>
           <h2 class="section-title">Three ways to help Unako open its doors.</h2>
         </div>
       </div>
@@ -165,7 +259,7 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <span class="section-num" style="color:var(--ochre-soft)">04 — Contact &amp; safety</span>
+          <span class="section-num" style="color:var(--ochre-soft)">07 — Contact &amp; safety</span>
           <h2 class="section-title">Reach the founder, or reach help first.</h2>
         </div>
         <p class="section-kicker">Unako is not yet a 24-hour crisis line. If you need help right now, use the numbers alongside.</p>
@@ -231,6 +325,6 @@
 
 <button class="back-to-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 
-<script src="assets/js/main.js?v=2"></script>
+<script src="assets/js/main.js?v=3"></script>
 </body>
 </html>

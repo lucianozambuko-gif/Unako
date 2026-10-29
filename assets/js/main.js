@@ -73,7 +73,8 @@
       '.section-head', '.about-grid > div', '.support-item', '.involve-card',
       '.tl-step', '.wishlist-group', '.founder-card', '.safety-box',
       '.role-list li', '.chip', '.sign-card', '.reel-grid > *', '.gallery-item',
-      '.stat', '.finder', '.diff-wrap', '.consent-card', '.builder', '.page-hero .wrap > *'
+      '.stat', '.finder', '.diff-wrap', '.consent-card', '.builder', '.breathe-copy', '.breathe-space',
+      '.page-hero .wrap > *'
     ].join(',');
     var els = document.querySelectorAll(selector);
     if (!('IntersectionObserver' in window) || reduceMotion) return;
@@ -111,7 +112,7 @@
     nums.forEach(function (el) { io.observe(el); });
   })();
 
-  /* ---------- Hero: word-by-word headline, rising particles, tilting seal ---------- */
+  /* ---------- Hero: word-by-word headline ---------- */
   (function () {
     var head = document.querySelector('.hero-head');
     if (head && !reduceMotion) {
@@ -139,89 +140,67 @@
       head.setAttribute('aria-label', head.textContent.replace(/\s+/g, ' ').trim());
       head.classList.add('animate');
     }
+  })();
 
-    var stage = document.querySelector('.hero-stage');
-    if (!stage || reduceMotion) return;
+  /* ---------- Breathing space: in 4, hold 4, out 6 ---------- */
+  (function () {
+    var space = document.querySelector('.breathe-space');
+    var toggle = document.querySelector('.breathe-toggle');
+    if (!space || !toggle) return;
+    var orb = space.querySelector('.breathe-orb');
+    var cue = space.querySelector('.breathe-cue');
+    var count = space.querySelector('.breathe-count');
+    var phases = [
+      { cls: 'in', text: 'Breathe in', secs: 4 },
+      { cls: 'hold', text: 'Hold gently', secs: 4 },
+      { cls: 'out', text: 'Breathe out', secs: 6 }
+    ];
+    var timer = null, ticker = null, idx = 0, rounds = 0;
 
-    var seal = stage.querySelector('.hero-seal');
-    stage.addEventListener('pointermove', function (e) {
-      var r = stage.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5;
-      var y = (e.clientY - r.top) / r.height - 0.5;
-      seal.style.transform = 'rotateY(' + (x * 16) + 'deg) rotateX(' + (-y * 16) + 'deg)';
+    function setCue(text) {
+      cue.firstChild.nodeValue = text;
+    }
+    function runPhase() {
+      var ph = phases[idx];
+      space.classList.remove('in', 'hold', 'out');
+      orb.style.transitionDuration = ph.secs + 's';
+      space.classList.add(ph.cls);
+      setCue(ph.text);
+      var left = ph.secs;
+      count.textContent = left;
+      clearInterval(ticker);
+      ticker = setInterval(function () {
+        left -= 1;
+        count.textContent = left > 0 ? left : '';
+      }, 1000);
+      timer = setTimeout(function () {
+        idx = (idx + 1) % phases.length;
+        if (idx === 0) rounds += 1;
+        runPhase();
+      }, ph.secs * 1000);
+    }
+    function stop(message) {
+      clearTimeout(timer); clearInterval(ticker);
+      timer = null;
+      space.classList.remove('in', 'hold', 'out');
+      orb.style.transitionDuration = '1.5s';
+      setCue(message);
+      count.textContent = '';
+      toggle.textContent = 'Begin breathing';
+      toggle.setAttribute('aria-pressed', 'false');
+    }
+    toggle.addEventListener('click', function () {
+      if (timer) {
+        stop(rounds ? 'Well done. Come back any time.' : 'Ready when you are');
+        return;
+      }
+      idx = 0; rounds = 0;
+      toggle.textContent = 'Stop';
+      toggle.setAttribute('aria-pressed', 'true');
+      runPhase();
     });
-    stage.addEventListener('pointerleave', function () { seal.style.transform = ''; });
-
-    var canvas = stage.querySelector('canvas');
-    if (!canvas || !canvas.getContext) return;
-    var ctx = canvas.getContext('2d');
-    var w, h, dpr, particles = [], running = false, pointer = null;
-    var styles = getComputedStyle(root);
-    var palette = [styles.getPropertyValue('--ochre').trim(), styles.getPropertyValue('--wine').trim(), styles.getPropertyValue('--ochre-soft').trim()];
-
-    function resize() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = canvas.clientWidth; h = canvas.clientHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    function spawn(initial) {
-      return {
-        x: Math.random() * w,
-        y: initial ? Math.random() * h : h + 10,
-        r: 1.5 + Math.random() * 3.5,
-        vy: 0.25 + Math.random() * 0.6,
-        sway: Math.random() * Math.PI * 2,
-        a: 0.25 + Math.random() * 0.5,
-        c: palette[Math.floor(Math.random() * palette.length)]
-      };
-    }
-    function frame() {
-      if (!running) return;
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach(function (p, idx) {
-        p.y -= p.vy;
-        p.sway += 0.02;
-        p.x += Math.sin(p.sway) * 0.3;
-        if (pointer) {
-          // particles drift gently up and away from the pointer — "lifted"
-          var dx = p.x - pointer.x, dy = p.y - pointer.y, d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 90 && d > 0) { p.x += dx / d * 1.2; p.y -= 0.8; }
-        }
-        if (p.y < -10) particles[idx] = spawn(false);
-        ctx.globalAlpha = p.a * Math.min(1, p.y / (h * 0.25));
-        ctx.fillStyle = p.c;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      requestAnimationFrame(frame);
-    }
-    function setRunning(on) {
-      if (on === running) return;
-      running = on;
-      if (on) requestAnimationFrame(frame);
-    }
-
-    resize();
-    for (var n = 0; n < 46; n++) particles.push(spawn(true));
-    window.addEventListener('resize', resize);
-    stage.addEventListener('pointermove', function (e) {
-      var r = canvas.getBoundingClientRect();
-      pointer = { x: e.clientX - r.left, y: e.clientY - r.top };
-    });
-    stage.addEventListener('pointerleave', function () { pointer = null; });
-
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        setRunning(entries[0].isIntersecting && !document.hidden);
-      }).observe(stage);
-    } else {
-      setRunning(true);
-    }
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) setRunning(false);
-      else if (stage.getBoundingClientRect().bottom > 0) setRunning(true);
+      if (document.hidden && timer) stop('Ready when you are');
     });
   })();
 
@@ -274,7 +253,7 @@
 
     var flow = {
       start: {
-        q: 'Who are you looking for support for?',
+        q: 'Who would you like support for?',
         options: [
           { label: 'Myself', next: 'what', who: 'me' },
           { label: 'Someone I care about', next: 'what', who: 'other' },
@@ -282,9 +261,9 @@
         ]
       },
       what: {
-        q: 'What feels closest to what’s going on?',
+        q: 'Take your time. What feels closest to what’s happening?',
         options: [
-          { label: 'Not safe right now', result: 'danger' },
+          { label: 'I don’t feel safe right now', result: 'danger' },
           { label: 'Someone is hurting, threatening or controlling', result: 'gbv' },
           { label: 'Feeling low, anxious or overwhelmed', result: 'mind' },
           { label: 'Alcohol or drugs', result: 'drugs' },
@@ -304,9 +283,9 @@
 
     var results = {
       danger: {
-        title: 'Please call for help now.',
+        title: 'Your safety comes first.',
         urgent: true,
-        text: 'If you or they are in immediate danger, these lines are free and answered 24 hours a day. Unako is not yet a crisis line, so please don’t wait for us.',
+        text: 'If you or they are in danger, please reach out now. These lines are free and answered by kind, trained people 24 hours a day. Unako isn’t a crisis line yet, so please don’t wait for us.',
         extra: HELP,
         services: ['svc-gbv']
       },
@@ -383,7 +362,7 @@
     function showResult(key) {
       var r = results[key];
       var html = '<div class="finder-result' + (r.urgent ? ' urgent' : '') + '">' +
-        '<p class="finder-label">' + (r.urgent ? 'Right now' : 'This could help') + '</p>' +
+        '<p class="finder-label">' + (r.urgent ? 'Right now' : 'Something that could help') + '</p>' +
         '<h3>' + r.title + '</h3><p>' + r.text + '</p>' + (r.extra || '') + (r.link || '');
       if (who === 'other' && key !== 'work') {
         html += '<p class="finder-friend">If someone tells you they’re being hurt: listen, believe them, and help them get help.</p>';

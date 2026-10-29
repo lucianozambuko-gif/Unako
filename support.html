@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -56,11 +56,27 @@
 <main id="main">
 
   <section class="page-hero">
+    <div class="glow" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wrap">
       <p class="breadcrumb"><a href="index.html">Home</a> / Support</p>
       <p class="eyebrow-line">What we offer</p>
       <h1>Support that meets people where they are.</h1>
       <p class="lede">Every service is designed to be walked into without shame — whether the visit is about a relationship, a habit, or a job application.</p>
+    </div>
+  </section>
+
+  <section id="breathe" class="panel">
+    <div class="wrap breathe">
+      <div class="breathe-copy">
+        <span class="section-num">A moment for you</span>
+        <h2 class="section-title">Before anything else, breathe.</h2>
+        <p>If today feels heavy, there's no rush. Follow the circle for a few slow breaths: in for four, hold for four, and out for six. Stop whenever you like.</p>
+        <button class="btn btn-ghost breathe-toggle" type="button" aria-pressed="false">Begin breathing</button>
+      </div>
+      <div class="breathe-space" aria-hidden="true">
+        <span class="breathe-orb"></span>
+        <span class="breathe-cue">Ready when you are<span class="breathe-count"></span></span>
+      </div>
     </div>
   </section>
 
@@ -112,7 +128,7 @@
     </div>
   </section>
 
-  <section id="difference" style="border-bottom:none;">
+  <section id="difference" class="panel">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -148,7 +164,7 @@
         </div>
       </div>
 
-      <h3 class="section-num" style="display:block; margin: 44px 0 0;">Consent is…</h3>
+      <h3 class="section-num consent-title">Consent is…</h3>
       <div class="consent-grid">
         <div class="consent-card"><h4>Freely given</h4><p>No pressure, guilt or threats.</p></div>
         <div class="consent-card"><h4>Can be taken back</h4><p>You can change your mind at any time.</p></div>
@@ -193,6 +209,6 @@
 
 <button class="back-to-top" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
 
-<script src="assets/js/main.js?v=4"></script>
+<script src="assets/js/main.js?v=5"></script>
 </body>
 </html>

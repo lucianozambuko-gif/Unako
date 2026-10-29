@@ -42,42 +42,6 @@
     });
   })();
 
-  /* ---------- Quick exit: floating button + Esc pressed twice ---------- */
-  (function () {
-    var EXIT_URL = 'https://www.google.com/search?q=weather';
-    function leave() {
-      // replace() so the Back button doesn't return to this site
-      document.body.style.display = 'none';
-      window.location.replace(EXIT_URL);
-    }
-
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'quick-exit';
-    btn.innerHTML = '<span aria-hidden="true">&#x2715;</span> Quick exit';
-    btn.setAttribute('aria-label', 'Quick exit: leave this site now');
-    btn.title = 'Leave this site now (or press Esc twice)';
-    btn.addEventListener('click', leave);
-    document.body.appendChild(btn);
-
-    var lastEsc = 0;
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 'Escape') return;
-      if (document.querySelector('dialog[open]')) return; // let Esc close the lightbox first
-      var now = Date.now();
-      if (now - lastEsc < 900) leave();
-      lastEsc = now;
-    });
-
-    var disclaimer = document.querySelector('.footer-disclaimer');
-    if (disclaimer) {
-      var hint = document.createElement('span');
-      hint.className = 'exit-hint';
-      hint.textContent = ' To leave this site quickly, tap “Quick exit” or press Esc twice.';
-      disclaimer.appendChild(hint);
-    }
-  })();
-
   /* ---------- Scroll progress, shrinking header, back-to-top ---------- */
   (function () {
     var header = document.querySelector('header.site');

@@ -720,36 +720,8 @@ nav.links a[aria-current="page"]::after { transform: scaleX(1); background: var(
 .js .back-to-top { opacity: 0; transform: translateY(12px); pointer-events: none; }
 .js .back-to-top.show { opacity: 1; transform: none; pointer-events: auto; }
 
-/* ---------- Quick exit ---------- */
-.quick-exit {
-  position: fixed;
-  left: 16px;
-  bottom: 20px;
-  z-index: 450;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 16px;
-  border: 1px solid var(--band-rule);
-  border-radius: 999px;
-  background: var(--band-bg);
-  color: var(--band-ink);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 13.5px;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-.quick-exit:hover { background: var(--wine); transform: translateY(-2px); }
-.quick-exit span { color: var(--band-accent); font-size: 12px; }
-.exit-hint { display: block; margin-top: 6px; }
 @media (max-width: 600px) {
-  .quick-exit { left: 12px; bottom: 14px; padding: 0 13px; font-size: 12.5px; }
   .back-to-top { right: 12px; bottom: 14px; }
-  .js body { padding-bottom: 68px; background: var(--band-bg); }
-  .js body > main { background: var(--paper); }
 }
 
 /* ---------- Hero stage: ring text, particles, tilting seal ---------- */

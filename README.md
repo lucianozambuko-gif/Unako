@@ -27,7 +27,6 @@ reference/           Original source materials (founding brief PDF, first single
 
 Everything is vanilla JS in `assets/js/main.js`. Each feature only runs if its markup is on the page. All of it is progressive: with JS off, content stays visible and static. Animation is switched off for visitors with `prefers-reduced-motion`.
 
-- **Quick exit**: a floating button on every page, plus pressing Esc twice. Both use `location.replace()` so the Back button doesn't return to the site.
 - **Scroll effects**: a progress bar, a header that shrinks as you scroll, and sections that reveal on scroll.
 - **Home hero**: the headline animates in word by word, with rising particles (paused when off-screen) and a tilting seal with a rotating text ring.
 - **Know the signs** (home): flip cards built as `<button aria-pressed>`.
@@ -49,10 +48,6 @@ then visit `http://localhost:8000`.
 ## Deployment
 
 The site is plain static HTML, so it deploys as-is to GitHub Pages, Netlify, Vercel, or any static host. For GitHub Pages: Settings → Pages → Deploy from branch → `main` / `/ (root)`.
-
-## Safety note
-
-The floating **Quick exit** button (and Esc twice) lets a visitor leave the site instantly if it's not safe to be browsing it. It's added to every page by `main.js`. Please don't remove it.
 
 ## Content source
 
